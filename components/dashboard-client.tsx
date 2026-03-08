@@ -19,7 +19,7 @@ export function DashboardClient({ user }: Props) {
   const controller = useDashboardController();
 
   return (
-    <div className="animate-page-enter mx-auto flex w-full max-w-5xl flex-col gap-5 py-4">
+    <div className="animate-page-enter mx-auto flex w-full flex-col gap-4 py-2 sm:gap-5 sm:py-4">
       <DashboardHeader
         email={user?.email ?? "Signed in user"}
         onCreate={controller.createModal.actions.open}

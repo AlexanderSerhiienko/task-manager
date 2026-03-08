@@ -25,7 +25,7 @@ type Props = {
 
 export function TaskStatusSection({ status, tasks, model }: Props) {
   return (
-    <div className="space-y-3 rounded-xl border border-zinc-800 bg-zinc-900/50 p-4">
+    <div className="space-y-3 rounded-xl border border-zinc-800 bg-zinc-900/50 p-3 sm:p-4">
       <h4 className="text-sm font-semibold uppercase tracking-wide text-zinc-300">
         {getTaskStatusLabel(status)} ({tasks.length})
       </h4>

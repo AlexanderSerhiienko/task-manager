@@ -81,7 +81,7 @@ export function TaskEditModal({ model }: Props) {
           />
         </div>
         {meta.editError ? <InlineError message={meta.editError} /> : null}
-        <Button type="submit" disabled={meta.updatingTaskId !== null} variant="default" className="w-fit">
+        <Button type="submit" disabled={meta.updatingTaskId !== null} variant="default" className="w-full sm:w-fit">
           {meta.updatingTaskId !== null ? "Saving..." : "Save changes"}
         </Button>
       </form>

@@ -19,7 +19,7 @@ export function WorkspacesList({ model, loading, errorMessage }: Props) {
   const hasWorkspaces = workspaces.length > 0;
 
   return (
-    <section className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-5 shadow-xl">
+    <section className="overflow-x-hidden rounded-2xl border border-zinc-800 bg-zinc-950/70 p-4 shadow-xl sm:p-5">
       <h2 className="mb-4 text-lg font-semibold text-zinc-100">Workspace list</h2>
       {loading ? <WorkspaceListSkeleton /> : null}
       {errorMessage ? <InlineError message={errorMessage} /> : null}

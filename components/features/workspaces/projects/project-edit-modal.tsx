@@ -66,7 +66,7 @@ export function ProjectEditModal({ model }: Props) {
           />
         </div>
         {meta.updateError ? <InlineError message={meta.updateError} /> : null}
-        <Button type="submit" disabled={meta.updating} variant="default" className="w-fit">
+        <Button type="submit" disabled={meta.updating} variant="default" className="w-full sm:w-fit">
           {meta.updating ? "Saving..." : "Save changes"}
         </Button>
       </form>

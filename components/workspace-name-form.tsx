@@ -43,7 +43,7 @@ export function WorkspaceNameForm({ slug, initialName, canEdit }: Props) {
   };
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-4 rounded-xl border border-zinc-800 bg-zinc-900/60 p-5">
+    <form onSubmit={onSubmit} className="grid gap-4 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 sm:p-5">
       <h3 className="text-base font-semibold text-zinc-100">Update workspace name</h3>
       <div className="grid gap-1">
         <label htmlFor="workspace-name" className="text-sm text-white">
@@ -66,7 +66,7 @@ export function WorkspaceNameForm({ slug, initialName, canEdit }: Props) {
         type="submit"
         disabled={disabled}
         variant="default"
-        className="w-fit"
+        className="w-full sm:w-fit"
       >
         {submitting ? "Saving..." : "Save changes"}
       </Button>

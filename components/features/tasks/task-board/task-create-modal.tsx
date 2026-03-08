@@ -137,7 +137,7 @@ export function TaskCreateModal({ model }: Props) {
           </label>
         )}
         {meta.submitError ? <InlineError message={meta.submitError} /> : null}
-        <Button type="submit" disabled={meta.submitting} variant="default" className="w-fit">
+        <Button type="submit" disabled={meta.submitting} variant="default" className="w-full sm:w-fit">
           {meta.submitting ? "Creating..." : "Create task"}
         </Button>
       </form>

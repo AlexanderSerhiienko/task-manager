@@ -45,7 +45,7 @@ export function MemberAddModal({ model }: Props) {
           />
         </div>
         {meta.submitError ? <InlineError message={meta.submitError} /> : null}
-        <Button type="submit" disabled={meta.submitting} variant="default" className="w-fit">
+        <Button type="submit" disabled={meta.submitting} variant="default" className="w-full sm:w-fit">
           {meta.submitting ? "Creating..." : "Create member"}
         </Button>
       </form>

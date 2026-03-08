@@ -14,7 +14,7 @@ export function WorkspaceMembersClient({ slug }: Props) {
   const controller = useMembersController({ slug });
 
   return (
-    <div className="animate-page-enter space-y-4">
+    <div className="animate-page-enter space-y-3 sm:space-y-4">
       <MembersHeader isOwner={controller.board.isOwner} onAdd={controller.addModal.actions.open} />
 
       <MembersList

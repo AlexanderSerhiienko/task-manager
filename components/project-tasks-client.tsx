@@ -17,23 +17,24 @@ type Props = {
 
 export function ProjectTasksClient({ slug, projectId }: Props) {
   const controller = useTaskBoardController({ slug, projectId });
+  const hasAnyTasks = controller.board.statusOrder.some((status) => controller.board.groupedTasks[status].length > 0);
 
   return (
-    <div className="animate-page-enter space-y-5">
+    <div className="animate-page-enter space-y-4 sm:space-y-5">
       <TaskBoardHeader onCreate={controller.createModal.actions.open} />
 
-      <section className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-5 shadow-xl">
+      <section className="rounded-2xl border border-zinc-800 bg-zinc-950/70 p-4 shadow-xl sm:p-5">
         {controller.board.loading ? <TaskBoardSkeleton /> : null}
         {controller.board.loadingError ? <InlineError message={controller.board.loadingError} /> : null}
         {controller.board.actionError ? <InlineError message={controller.board.actionError} /> : null}
-        {!controller.board.loading && !controller.board.loadingError && controller.board.statusOrder.every((status) => controller.board.groupedTasks[status].length === 0) ? (
+        {!controller.board.loading && !controller.board.loadingError && !hasAnyTasks ? (
           <EmptyState
             title="No tasks yet"
             description="Create your first task for this project."
           />
         ) : null}
-        {!controller.board.loading && !controller.board.loadingError ? (
-          <div className="space-y-5">
+        {!controller.board.loading && !controller.board.loadingError && hasAnyTasks ? (
+          <div className="space-y-4 sm:space-y-5">
             {controller.board.statusOrder.map((status) => (
               <TaskStatusSection
                 key={status}

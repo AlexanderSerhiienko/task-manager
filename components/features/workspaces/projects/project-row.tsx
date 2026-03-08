@@ -20,13 +20,13 @@ export function ProjectRow({
   onAskDelete,
 }: Props) {
   return (
-    <li className="surface-hover rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-      <div className="flex items-center justify-between gap-3">
+    <li className="surface-hover rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 sm:p-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
-          <p className="font-medium text-zinc-100">{project.name}</p>
-          <p className="text-sm text-zinc-400">{project.description ?? "No description"}</p>
+          <p className="truncate font-medium text-zinc-100">{project.name}</p>
+          <p className="break-words text-sm text-zinc-400">{project.description ?? "No description"}</p>
         </div>
-        <div className="flex shrink-0 gap-2">
+        <div className="mobile-action-stack sm:shrink-0">
           <ButtonLink href={`/workspaces/${slug}/projects/${project.id}`} size="sm">
             Open project
           </ButtonLink>

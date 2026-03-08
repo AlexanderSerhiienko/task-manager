@@ -31,9 +31,9 @@ export function WorkspaceSettingsClient({ slug }: Props) {
   }
 
   return (
-    <div className="animate-page-enter space-y-4">
+    <div className="animate-page-enter space-y-3 sm:space-y-4">
       <div>
-        <h2 className="text-2xl font-semibold text-zinc-100">Settings</h2>
+        <h2 className="text-xl font-semibold text-zinc-100 sm:text-2xl">Settings</h2>
         <p className="text-sm text-zinc-400">Manage workspace configuration.</p>
       </div>
       <WorkspaceNameForm

@@ -28,7 +28,7 @@ export function ConfirmModal({
     <Modal title={title} isOpen={isOpen} onClose={isConfirming ? () => {} : onCancel}>
       <div className="space-y-4">
         <p className="text-sm text-zinc-300">{description}</p>
-        <div className="flex gap-2">
+        <div className="mobile-action-stack">
           <Button type="button" onClick={onCancel} disabled={isConfirming} variant="secondary">
             {cancelLabel}
           </Button>

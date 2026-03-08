@@ -16,9 +16,9 @@ type MetricCardProps = {
 
 function MetricCard({ label, value }: MetricCardProps) {
   return (
-    <div className="surface-hover rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
+    <div className="surface-hover rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 sm:p-4">
       <p className="text-xs uppercase tracking-wide text-zinc-400">{label}</p>
-      <p className="mt-1 text-3xl font-semibold text-zinc-100">{value}</p>
+      <p className="mt-1 text-2xl font-semibold text-zinc-100 sm:text-3xl">{value}</p>
     </div>
   );
 }
@@ -50,9 +50,9 @@ export function WorkspaceOverviewClient({ slug }: Props) {
   ];
 
   return (
-    <div className="animate-page-enter space-y-5">
-      <h2 className="text-2xl font-semibold text-zinc-100">Overview</h2>
-      <div className="surface-hover rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
+    <div className="animate-page-enter space-y-4 sm:space-y-5">
+      <h2 className="text-xl font-semibold text-zinc-100 sm:text-2xl">Overview</h2>
+      <div className="surface-hover rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 sm:p-4">
         <p className="text-sm text-zinc-400">Workspace name</p>
         <p className="text-xl font-semibold text-zinc-100">{overview.workspace.name}</p>
         <p className="text-sm text-zinc-400">Role: {overview.role}</p>

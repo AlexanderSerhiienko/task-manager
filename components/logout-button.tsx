@@ -12,6 +12,7 @@ export function LogoutButton() {
       }}
       variant="secondary"
       size="sm"
+      className="w-full sm:w-auto"
     >
       Logout
     </Button>

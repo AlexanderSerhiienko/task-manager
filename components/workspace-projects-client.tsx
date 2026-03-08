@@ -15,7 +15,7 @@ export function WorkspaceProjectsClient({ slug }: Props) {
   const controller = useProjectsController({ slug });
 
   return (
-    <div className="animate-page-enter space-y-4">
+    <div className="animate-page-enter space-y-3 sm:space-y-4">
       <ProjectsHeader
         isOwner={controller.board.isOwner}
         onCreate={controller.createModal.actions.open}

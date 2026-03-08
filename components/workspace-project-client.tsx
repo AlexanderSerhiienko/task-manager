@@ -31,11 +31,11 @@ export function WorkspaceProjectClient({ slug, projectId }: Props) {
   }
 
   return (
-    <div className="animate-page-enter space-y-5">
-      <h2 className="text-2xl font-semibold text-zinc-100">{project.name}</h2>
-      <div className="surface-hover rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 text-sm text-zinc-200">
+    <div className="animate-page-enter space-y-4 sm:space-y-5">
+      <h2 className="break-words text-xl font-semibold text-zinc-100 sm:text-2xl">{project.name}</h2>
+      <div className="surface-hover rounded-xl border border-zinc-800 bg-zinc-900/60 p-3 text-sm text-zinc-200 sm:p-4">
         <p>
-          <span className="font-medium">Project ID:</span> {project.id}
+          <span className="font-medium">Project ID:</span> <span className="break-all">{project.id}</span>
         </p>
         <p>
           <span className="font-medium">Description:</span> {project.description ?? "No description"}

@@ -103,7 +103,7 @@ export function Modal({ title, isOpen, onClose, children }: Props) {
 
   return (
     <div
-      className="animate-overlay-enter fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+      className="animate-overlay-enter fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-3 backdrop-blur-sm sm:p-4"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) {
           onClose();
@@ -117,12 +117,21 @@ export function Modal({ title, isOpen, onClose, children }: Props) {
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        className="animate-modal-enter w-full max-w-lg rounded-2xl border border-zinc-800 bg-zinc-950/95 p-5 shadow-2xl"
+        className="animate-modal-enter w-full max-w-lg max-h-[calc(100dvh-1.5rem)] overflow-y-auto rounded-2xl border border-zinc-800 bg-zinc-950/95 p-4 shadow-2xl sm:max-h-[calc(100dvh-2rem)] sm:p-5"
       >
         <div className="mb-4 flex items-center justify-between gap-3">
           <h3 id={titleId} className="text-lg font-semibold text-zinc-100">{title}</h3>
-          <Button type="button" onClick={onClose} variant="ghost" size="xs">
-            Close
+          <Button
+            type="button"
+            onClick={onClose}
+            variant="ghost"
+            size="xs"
+            aria-label="Close modal"
+            className="h-9 w-9 p-0 text-zinc-300 hover:text-zinc-100"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+              <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+            </svg>
           </Button>
         </div>
         <div id={descriptionId}>{children}</div>

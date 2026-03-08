@@ -36,18 +36,18 @@ export function TaskCard({
   } = model;
 
   return (
-    <li className="surface-hover rounded-xl border border-zinc-700/80 bg-zinc-950/70 p-4">
+    <li className="surface-hover rounded-xl border border-zinc-700/80 bg-zinc-950/70 p-3 sm:p-4">
       <div className="space-y-3">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="font-medium text-zinc-100">{task.title}</p>
-            <p className="text-sm text-zinc-300">{task.description ?? "No description"}</p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+          <div className="min-w-0">
+            <p className="break-words font-medium text-zinc-100">{task.title}</p>
+            <p className="break-words text-sm text-zinc-300">{task.description ?? "No description"}</p>
             <p className="text-xs text-zinc-400">Due date: {formatDueDate(task.dueDate)}</p>
-            <p className="text-xs text-zinc-400">
+            <p className="break-words text-xs text-zinc-400">
               Assignee: {task.assignee?.name ?? task.assignee?.email ?? "Unassigned"}
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="mobile-action-stack sm:shrink-0">
             <Button type="button" onClick={() => actions.onStartEdit(task)} variant="secondary" size="sm">
               Edit
             </Button>
@@ -70,7 +70,7 @@ export function TaskCard({
               value={task.status}
               disabled={updatingStatusTaskId === task.id}
               onChange={(event) => actions.onChangeStatus(task.id, event.target.value as TaskStatus)}
-              className="rounded-lg border border-zinc-700 bg-zinc-900/70 px-3 py-1.5 text-sm outline-none"
+              className="w-full rounded-lg border border-zinc-700 bg-zinc-900/70 px-3 py-1.5 text-sm outline-none"
             >
               {statusOrder.map((taskStatus) => (
                 <option key={taskStatus} value={taskStatus}>
@@ -87,7 +87,7 @@ export function TaskCard({
                 value={task.assigneeId ?? ""}
                 disabled={updatingAssigneeTaskId === task.id}
                 onChange={(event) => actions.onAssign(task.id, event.target.value || null)}
-                className="rounded-lg border border-zinc-700 bg-zinc-900/70 px-3 py-1.5 text-sm outline-none"
+                className="w-full rounded-lg border border-zinc-700 bg-zinc-900/70 px-3 py-1.5 text-sm outline-none"
               >
                 <option value="">Unassigned</option>
                 {members.map((member) => (
@@ -109,7 +109,7 @@ export function TaskCard({
                 }}
                 variant="secondary"
                 size="sm"
-                className="w-fit"
+                className="w-full sm:w-fit"
               >
                 {task.assigneeId === currentUserId ? "Remove my assignment" : "Assign to me"}
               </Button>

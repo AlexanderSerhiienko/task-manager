@@ -69,7 +69,7 @@ export function WorkspaceCreateModal({ model }: Props) {
             {meta.submitError}
           </p>
         ) : null}
-        <Button type="submit" disabled={meta.submitting} variant="default" className="w-fit">
+        <Button type="submit" disabled={meta.submitting} variant="default" className="w-full sm:w-fit">
           {meta.submitting ? "Creating..." : "Create workspace"}
         </Button>
       </form>
