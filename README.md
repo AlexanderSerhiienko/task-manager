@@ -9,6 +9,10 @@ A workspace-based task manager where teams can:
 
 This repository is built as a portfolio-ready full-stack project focused on architecture, consistency, and access control.
 
+## Live Demo
+
+- [Task Manager on Vercel](https://task-manager-one-teal.vercel.app/)
+
 ## Product Scope (MVP)
 
 Included:
@@ -170,14 +174,13 @@ npm run prisma:studio
 
 ## Known Limitations
 
-- Automated tests are currently minimal and will be expanded.
+- No end-to-end (browser) test suite yet.
 - No pagination yet for large lists.
 - No activity log/history.
 - No advanced notifications or integrations.
 
 ## Roadmap
 
-- Add integration tests for authz and API contracts.
 - Add pagination for members/projects/tasks lists.
 - Add richer dashboard analytics.
 - Add comments and attachments to tasks.
